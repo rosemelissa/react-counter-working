@@ -1,31 +1,31 @@
 import { useState } from "react";
 
 function CounterDemo(): JSX.Element {
-  const [counterValueFromCurrentRender, queueRerenderWithNewCounterValue] =
+  const [counter, setCounter] =
     useState(0);
 
   const handleMinusFive = () => {
-    queueRerenderWithNewCounterValue(counterValueFromCurrentRender - 5);
+    setCounter(counter - 5);
   };
   
   const handleMinusOne = () => {
-    queueRerenderWithNewCounterValue(counterValueFromCurrentRender - 1);
+    setCounter(counter - 1);
   };
 
   const handleAddOne = () => {
-    queueRerenderWithNewCounterValue(counterValueFromCurrentRender + 1);
+    setCounter(counter + 1);
   };
 const handleAddFive = () => {
-    queueRerenderWithNewCounterValue(previousValue => previousValue + 5);
+    setCounter(previousValue => previousValue + 5);
   };
   const handleReset = () => {
-    queueRerenderWithNewCounterValue(0);
+    setCounter(0);
   }
 
   return (
     <>
       <h1>Counter Demo</h1>
-      <p>Current value: {counterValueFromCurrentRender}</p>
+      <p>Current value: {counter}</p>
       <button onClick={handleMinusFive}>-5</button>
       <hr />
       <button onClick={handleMinusOne}>-1</button>
