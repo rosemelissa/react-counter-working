@@ -1,13 +1,12 @@
 import { useState } from "react";
 
 function CounterDemo(): JSX.Element {
-  const [counter, setCounter] =
-    useState(0);
+  const [counter, setCounter] = useState(0);
 
   const handleMinusFive = () => {
     setCounter(counter - 5);
   };
-  
+
   const handleMinusOne = () => {
     setCounter(counter - 1);
   };
@@ -15,12 +14,12 @@ function CounterDemo(): JSX.Element {
   const handleAddOne = () => {
     setCounter(counter + 1);
   };
-const handleAddFive = () => {
-    setCounter(previousValue => previousValue + 5);
+  const handleAddFive = () => {
+    setCounter((previousValue) => previousValue + 5);
   };
   const handleReset = () => {
     setCounter(0);
-  }
+  };
 
   return (
     <>
